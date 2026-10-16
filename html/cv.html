@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LÊ MINH - Giới thiệu bản thân</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: "Segoe UI", Roboto, Arial, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 40px 20px;
+    color: #444444;
+  }
+
+  .container { max-width: 860px; margin: 0 auto; }
+
+  .card {
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  }
+
+  /* HEADER */
+  .profile {
+    text-align: center;
+    padding: 40px 30px 32px;
+    margin-bottom: 24px;
+  }
+
+  .avatar {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    border: 4px solid #667eea;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto 18px;
+    background: #f0f4ff;
+  }
+
+  h1 {
+    color: #333333;
+    font-size: 2rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+
+  .job-title {
+    color: #667eea;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 16px;
+  }
+
+  .bio {
+    color: #666666;
+    max-width: 560px;
+    margin: 0 auto 18px;
+    line-height: 1.7;
+  }
+
+  .skills { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-bottom: 22px; }
+
+  .skill-tag {
+    background: #f0f4ff;
+    color: #667eea;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+
+  .btn {
+    display: inline-block;
+    background: #667eea;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 11px 28px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: background 0.2s;
+  }
+  .btn { cursor: pointer; }
+  .btn:hover { background: #5563c1; }
+
+  .photo-area { display: flex; flex-direction: column; align-items: center; gap: 14px; }
+  .photo-frame {
+    width: 100%;
+    max-width: 420px;
+    aspect-ratio: 4 / 3;
+    border: 2px dashed #667eea;
+    border-radius: 12px;
+    background: #f0f4ff;
+    color: #667eea;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .photo-frame img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .btn:focus-visible { outline: 3px solid #5563c1; outline-offset: 3px; }
+
+  /* CÁC KHỐI NỘI DUNG */
+  .box { padding: 28px 30px; }
+  .top-box { margin-bottom: 24px; }
+
+  .bottom-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  .section-title,
+  .box h2 {
+    color: #333333;
+    font-size: 1.25rem;
+    padding-bottom: 10px;
+    margin-bottom: 14px;
+    border-bottom: 2px solid #f0f0f0;
+  }
+
+  .info-list, .box ul { list-style: none; color: #444444; }
+  .box li {
+    line-height: 1.6;
+    padding: 6px 0 6px 20px;
+    position: relative;
+  }
+  .box li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 15px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #667eea;
+  }
+
+  .box strong { color: #333333; }
+  .box a { color: #667eea; text-decoration: none; }
+  .box a:hover { color: #5563c1; text-decoration: underline; }
+
+  @media (max-width: 640px) {
+    .bottom-row { grid-template-columns: 1fr; }
+    h1 { font-size: 1.6rem; }
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+
+    <!-- HEADER / PROFILE -->
+    <header class="card profile">
+      <!-- Thay src bằng ảnh của bạn (ảnh rõ mặt, lịch sự) -->
+      <img class="avatar" src="C:\Users\hong minh\OneDrive\Hình ảnh\Ảnh chụp màn hình\avatar.jpg" alt="Ảnh đại diện Lê Minh"
+           onerror="this.removeAttribute('src')">
+      <h1>Lê Minh</h1>
+      <p class="job-title">Sinh viên Công nghệ thông tin</p>
+      <div class="skills">
+        <span class="skill-tag">Phân tích nghiệp vụ (BA)</span>
+        <span class="skill-tag">Testing</span>
+      </div>
+      <div class="photo-area">
+        <div class="photo-frame" id="photoFrame">Chưa có ảnh</div>
+        <label class="btn" for="photoInput" tabindex="0">Chọn ảnh của tôi</label>
+        <input type="file" id="photoInput" accept="image/*" hidden>
+      </div>
+    </header>
+
+    <!-- KHỐI TRÊN -->
+    <section class="card box top-box">
+      <h2>Mọi điều về tôi:</h2>
+      <ul>
+        <li>Tôi đang là sinh viên theo học chuyên ngành Công nghệ thông tin.</li>
+        <li>Tôi có định hướng phát triển sâu vào mảng Phân tích nghiệp vụ (BA) và Kiểm thử giao diện (Frontend Testing).</li>
+      </ul>
+    </section>
+
+    <!-- KHỐI DƯỚI: 2 CỘT SONG SONG -->
+    <div class="bottom-row">
+
+      <!-- CỘT TRÁI -->
+      <section class="card box bottom-box">
+        <h2>Sự thật thú vị:</h2>
+        <ul>
+          <li>Tôi có thói quen vừa học lập trình vừa nghe nhạc để tập trung cao độ.</li>
+          <li>Tôi thích tìm kiếm và thử nghiệm các công cụ hỗ trợ tăng năng suất làm việc.</li>
+        </ul>
+      </section>
+
+      <!-- CỘT PHẢI -->
+      <section class="card box bottom-box">
+        <h2>Thông tin liên hệ:</h2>
+        <ul class="info-list">
+          <li><strong>Email:</strong> <a href="mailto:lehongminh185@gmail.com">lehongminh185@gmail.com</a></li>
+          <li><strong>Khu vực:</strong> Sóc Sơn, Hà Nội</li>
+          <li><strong>GitHub:</strong> <a href="https://leminh22.github.io" target="_blank" rel="noopener">leminh22.github.io</a></li>
+        </ul>
+      </section>
+
+    </div>
+  </div>
+
+<script>
+  const input = document.getElementById('photoInput');
+  const frame = document.getElementById('photoFrame');
+  const label = document.querySelector('label[for="photoInput"]');
+
+  input.addEventListener('change', () => {
+    const file = input.files[0];
+    if (!file) return;
+    const img = document.createElement('img');
+    img.alt = 'Ảnh của Lê Minh';
+    img.src = URL.createObjectURL(file);
+    frame.replaceChildren(img);
+  });
+
+  label.addEventListener('keydown', e => {
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); input.click(); }
+  });
+</script>
+</body>
+</html>
+c:\Users\hong minh\OneDrive\Hình ảnh\Ảnh chụp màn hình\avatar.jpg
